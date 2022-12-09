@@ -29,12 +29,16 @@ export default function App() {
       <View style={styles.goalsContainer}>
         {/* <Text>List of goals..</Text> */}
         {courseGoals.map((goal) => (
-          <Text key={goal}>{goal}</Text>
+          <View key={goal} style={styles.goalItem}>
+            <Text style={styles.goalText}>{goal}</Text>
+          </View>
         ))}
       </View>
     </View>
   );
 }
+
+//in react style parent style not support to child (not like CSS)
 
 const styles = StyleSheet.create({
   appContainer: {
@@ -64,5 +68,14 @@ const styles = StyleSheet.create({
   },
   goalsContainer: {
     flex: 5,
+  },
+  goalItem: {
+    margin: 8,
+    padding: 8,
+    borderRadius: 6,
+    backgroundColor: "#5e0acc",
+  },
+  goalText: {
+    color: "white",
   },
 });
